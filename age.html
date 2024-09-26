@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function show(){
+            const user= prompt("Please enter your age");
+            if(user>= 18)
+        {
+            document.getElementById("add").textContent = "You are eligible";
+            console.log("You are eligible");
+        }
+        else if (user<18) {
+            
+            document.getElementById("add1").textContent = "You are not eligible";
+            console.log("You are not eligible");
+        }
+        }
+    </script>
+</head>
+<body>
+    <p>
+        Click to check your age for voting  
+    </p>
+    <p id="add" style="background-color: green;"></p>
+    <p id="add1" style="background-color: red;">
+        
+    </p>
+    <button onclick="show()">
+        Click me!
+    </button>
+    
+</body>
+</html>

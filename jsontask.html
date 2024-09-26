@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function stor()
+        {
+            var model = a.value;
+            var price = b.value;
+            
+            var obj = {model:model,price : price};
+         var e = JSON.stringify(obj);
+
+         localStorage.setItem(a.value,e);
+    }
+        function ret(key)
+        {
+            var key = document.querySelector("#retrievekey").value;
+            if(key)
+        {
+            // let data1 = {model:${JSON.parse(Key).model},Price:${JSON.parse(data).Price};
+            localStorage.getItem(Key,data1);
+            // console.log(data1);
+        }
+          
+        }
+    
+
+    function del(key)
+        {
+            var key = document.querySelector("#deleteKey").value;
+            if(key)
+            {
+
+                localStorage.removeItem(key);
+            }
+            
+            
+        }
+        function clearall()
+        {
+            window.localStorage.clear();
+
+        }
+
+    </script>
+</head>
+<body>
+    <h1 style="text-align: center;">
+        Vehicle World
+    </h1>
+    <form action="">
+    <label for="">Model:</label>
+    <br>
+    <input type="text" name="" id="a">
+    <br>
+    <label for="">Price:</label>
+    <br>
+    <input type="text" name="" id="b">
+    <br>
+    <label for="">Key:</label>
+    <br>
+    <input type="text" name="" id="c">
+    <br>    <br>
+    <button type="submit" onclick="stor()" style="background-color: rgb(111, 200, 111);">Store record</button>
+<br>
+<br>    
+
+    <label for="">Enter key to retrieve item:</label>
+    <br>
+    <input type="text" id="d">
+    <br>
+<br>
+    <button type="button"  onclick="ret()"  style="background-color: blue; ">Retrieve record</button>
+        <br>
+        <br>
+    <label for="">Enter key to delete record</label>
+    <br>
+    <input type="text" id="e">
+    <br>
+    <br>
+    <button type="button" onclick="del()"  style="background-color: red;">Delete record</button>
+    <button type="button" onclick="clearall()" style="background-color: tomato;">Delete All</button>
+    </form>
+    
+</body>
+</html>
